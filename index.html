@@ -1,0 +1,2602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel El Campanario | Comayagua, Honduras</title>
+  <meta name="description" content="Hotel 3 estrellas en Comayagua, Honduras. Piscina, restaurante, WiFi gratis. A 17km del Aeropuerto Palmerola. Reserva en Booking.com o Agoda.">
+  <meta name="keywords" content="hotel comayagua, hotel honduras, hotel campanario, hospedaje comayagua, hotel palmerola">
+  <meta property="og:title" content="Hotel El Campanario | Comayagua, Honduras">
+  <meta property="og:description" content="Tu descanso en el corazón de Honduras. 4.4★ en Google.">
+  <meta property="og:url" content="https://hotelcampanariohn.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== REAL IMAGES MAPPING
+       piscina.jpg   → hero bg + gallery pool
+       comedor.jpg   → about visual + gallery restaurant
+       eventos.jpg   → gallery events + rooms section accent
+       logo_white.png → navbar + footer logo
+    ===== */
+
+    /* ===== VARIABLES ===== */
+    :root {
+      --primary:       #8B3A1F;
+      --primary-light: #A84B2A;
+      --primary-dark:  #6B2C17;
+      --accent:        #C9A84C;
+      --accent-light:  #D4B86A;
+      --bg:            #FAF7F2;
+      --bg-dark:       #F0EBE3;
+      --text:          #1C1C1C;
+      --text-muted:    #6B6355;
+      --white:         #FFFFFF;
+      --shadow-sm:     0 2px 8px rgba(28,28,28,.08);
+      --shadow-md:     0 8px 32px rgba(28,28,28,.12);
+      --shadow-lg:     0 24px 64px rgba(28,28,28,.16);
+      --r:             4px;
+      --r-lg:          10px;
+      --t:             .3s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+
+    .label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--primary-dark);
+      margin: .5rem 0 1rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      line-height: 1.75;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 96px 0; }
+    .tc { text-align: center; }
+    .tc .section-sub { margin: 0 auto; }
+
+    /* ===== ORNAMENT ===== */
+    .orn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 10px 0 28px;
+    }
+    .orn-line {
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+    }
+    .orn-icon { color: var(--accent); font-size: .95rem; }
+
+    /* ===== REVEAL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.v  { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: .1s; }
+    .d2 { transition-delay: .2s; }
+    .d3 { transition-delay: .3s; }
+    .d4 { transition-delay: .4s; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--r);
+      font-family: 'Inter', sans-serif;
+      font-size: .88rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      cursor: pointer;
+      transition: all var(--t);
+      border: none;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(139,58,31,.3); }
+    .btn-accent  { background: var(--accent);  color: var(--white); }
+    .btn-accent:hover  { background: var(--accent-light); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.55); }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: var(--white); }
+    .btn-wa { background: #25D366; color: var(--white); }
+    .btn-wa:hover { background: #1DA851; transform: translateY(-2px); }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 22px 0;
+      transition: all var(--t);
+    }
+    .nav.scrolled {
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(12px);
+      padding: 14px 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      transition: color var(--t);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav.scrolled .nav-logo { color: var(--primary); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.88);
+      text-decoration: none;
+      transition: color var(--t);
+    }
+    .nav.scrolled .nav-links a { color: var(--text-muted); }
+    .nav-links a:hover { color: var(--accent) !important; }
+
+    .nav-cta {
+      padding: 10px 20px !important;
+      background: var(--accent);
+      color: var(--white) !important;
+      border-radius: var(--r);
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--accent-light) !important; color: var(--white) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all var(--t);
+      border-radius: 2px;
+    }
+    .nav.scrolled .hamburger span { background: var(--text); }
+
+    /* Mobile nav overlay */
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--white);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    .nav-overlay.open { display: flex; }
+    .nav-overlay a {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--primary);
+      text-decoration: none;
+      transition: color var(--t);
+    }
+    .nav-overlay a:hover { color: var(--accent); }
+    .nav-overlay-close {
+      position: absolute;
+      top: 24px; right: 24px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    /* --- Carousel slides --- */
+    .hero-slides {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+      transform: scale(1.04);
+      transition: opacity 1.2s ease, transform 6s ease;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .hero-slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,4,2,.55) 0%,
+        rgba(10,4,2,.42) 40%,
+        rgba(10,4,2,.72) 80%,
+        rgba(10,4,2,.92) 100%
+      );
+    }
+
+    /* diamond texture over all slides */
+    .hero-texture {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26 0L52 26L26 52L0 26Z' fill='none' stroke='%23C9A84C' stroke-opacity='0.04' stroke-width='1'/%3E%3C/svg%3E");
+    }
+
+    /* --- Hero content layer --- */
+    .hero-body {
+      position: relative;
+      z-index: 3;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 130px 0 20px;
+    }
+
+    /* --- BIG LOGO --- */
+    .hero-logo-wrap {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .hero-logo-big {
+      height: clamp(80px, 14vw, 160px);
+      width: auto;
+      filter: drop-shadow(0 4px 32px rgba(0,0,0,.5));
+      animation: logoPulse 4s ease infinite;
+    }
+    @keyframes logoPulse {
+      0%,100% { filter: drop-shadow(0 4px 32px rgba(0,0,0,.5)); }
+      50%      { filter: drop-shadow(0 4px 48px rgba(201,168,76,.35)); }
+    }
+    .hero-logo-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .hero-logo-divider span {
+      height: 1px;
+      width: 80px;
+      background: linear-gradient(to right, transparent, rgba(201,168,76,.6), transparent);
+      display: block;
+    }
+    .hero-logo-divider em {
+      color: var(--accent);
+      font-size: .7rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-style: normal;
+      white-space: nowrap;
+    }
+
+    /* --- Text content --- */
+    .hero-content {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,.18);
+      border: 1px solid rgba(201,168,76,.35);
+      border-radius: 100px;
+      padding: 6px 16px 6px 10px;
+      font-size: .76rem;
+      color: var(--accent-light);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero-pill strong { color: var(--accent); }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      color: var(--white);
+      margin-bottom: 16px;
+      text-shadow: 0 2px 24px rgba(0,0,0,.4);
+      line-height: 1.15;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,.72);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* --- Slide caption badge --- */
+    .slide-caption {
+      text-align: center;
+      margin-top: 32px;
+      min-height: 28px;
+    }
+    .slide-caption-inner {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: .76rem;
+      color: rgba(255,255,255,.85);
+      letter-spacing: .08em;
+      transition: opacity .4s ease;
+    }
+
+    /* --- Nav arrows --- */
+    .hero-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 4;
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--t);
+      line-height: 1;
+    }
+    .hero-arrow:hover {
+      background: rgba(201,168,76,.35);
+      border-color: rgba(201,168,76,.5);
+    }
+    .hero-arrow-prev { left: 24px; }
+    .hero-arrow-next { right: 24px; }
+
+    /* --- Dots + stats bar --- */
+    .hero-foot {
+      position: relative;
+      z-index: 3;
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding: 20px 0;
+    }
+    .hero-foot-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .hero-dots {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .hero-dot {
+      width: 28px;
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(255,255,255,.3);
+      cursor: pointer;
+      transition: all var(--t);
+      border: none;
+      padding: 0;
+    }
+    .hero-dot.active {
+      background: var(--accent);
+      width: 44px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .stat-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: .72rem;
+      color: rgba(255,255,255,.5);
+      letter-spacing: .04em;
+      margin-top: 3px;
+    }
+
+    @keyframes cue {
+      0%,100% { opacity: 1; }
+      50% { opacity: .3; }
+    }
+
+    /* ===== BOOKING BAR ===== */
+    .bbar {
+      background: var(--white);
+      box-shadow: 0 12px 48px rgba(0,0,0,.14);
+      position: relative;
+      z-index: 10;
+    }
+    .bbar-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr auto;
+    }
+    .bfield {
+      padding: 20px 22px;
+      border-right: 1px solid var(--bg-dark);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      transition: background var(--t);
+    }
+    .bfield:hover { background: var(--bg); }
+    .bfield label {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .bfield input,
+    .bfield select {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      font-size: .93rem;
+      color: var(--text);
+      cursor: pointer;
+      width: 100%;
+    }
+    .bbar-submit {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 0 32px;
+      font-family: 'Inter', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background var(--t);
+      white-space: nowrap;
+    }
+    .bbar-submit:hover { background: var(--primary-dark); }
+
+    /* ===== ABOUT ===== */
+    .about { background: var(--bg); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+    .about-vis { position: relative; height: 520px; }
+    .about-main {
+      position: absolute;
+      top: 0; right: 0;
+      width: 72%; height: 84%;
+      border-radius: var(--r-lg);
+      background: url('img/bg-img/comedor.jpg') center/cover no-repeat;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom right, transparent 60%, rgba(0,0,0,.25));
+    }
+
+    .about-accent {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 52%; height: 48%;
+      border-radius: var(--r-lg);
+      background: url('img/bg-img/piscina.jpg') center/cover no-repeat;
+      border: 6px solid var(--bg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .about-accent::after { content: none; }
+
+    .about-badge {
+      position: absolute;
+      top: 48px; left: 0;
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-md);
+      z-index: 2;
+    }
+    .badge-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-stars { color: var(--accent); font-size: .85rem; }
+    .badge-lbl { font-size: .75rem; color: var(--text-muted); margin-top: 2px; }
+
+    .about-feats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .feat {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--white);
+      border-radius: var(--r);
+      border-left: 3px solid var(--accent);
+      font-size: .85rem;
+      font-weight: 500;
+    }
+    .feat-icon { font-size: 1.3rem; flex-shrink: 0; }
+
+    /* ===== ROOMS ===== */
+    .rooms { background: var(--bg-dark); }
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .room-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--t);
+    }
+    .room-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+    .room-img {
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      gap: 0;
+    }
+    /* diagonal stripe texture */
+    .room-img::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0) 0px,
+        rgba(255,255,255,0) 12px,
+        rgba(255,255,255,0.03) 12px,
+        rgba(255,255,255,0.03) 13px
+      );
+    }
+    /* bottom vignette */
+    .room-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, rgba(0,0,0,.35));
+    }
+    .room-img-ornament {
+      width: 40px;
+      height: 1px;
+      background: rgba(201,168,76,.6);
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .room-img-ornament::before,
+    .room-img-ornament::after {
+      content: '';
+      position: absolute;
+      width: 5px; height: 5px;
+      background: rgba(201,168,76,.7);
+      border-radius: 50%;
+      top: -2px;
+    }
+    .room-img-ornament::before { left: -6px; }
+    .room-img-ornament::after  { right: -6px; }
+    .room-img-cat {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,.85);
+      position: relative;
+      z-index: 1;
+      margin-bottom: 8px;
+    }
+    .room-img-name {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.7rem;
+      color: rgba(255,255,255,.92);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      line-height: 1.2;
+      padding: 0 16px;
+      text-shadow: 0 2px 16px rgba(0,0,0,.4);
+    }
+    .room-img-cap {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      font-size: .68rem;
+      color: rgba(255,255,255,.45);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .room-chip {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: var(--accent);
+      color: var(--white);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      z-index: 1;
+    }
+    .room-body { padding: 24px; }
+    .room-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+    .room-desc { font-size: .85rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 16px; }
+    .room-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+    .tag {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .73rem;
+      color: var(--text-muted);
+      background: var(--bg);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+    .room-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--bg-dark);
+    }
+    .room-price-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+    }
+    .room-price-sub { font-size: .72rem; color: var(--text-muted); }
+
+    /* ===== SERVICES ===== */
+    .services {
+      background: var(--primary-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .services::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26 0L52 26L26 52L0 26Z' fill='none' stroke='%23C9A84C' stroke-opacity='0.06' stroke-width='1'/%3E%3C/svg%3E");
+    }
+    .services .section-title { color: var(--white); }
+    .services .label { color: var(--accent); }
+    .services .section-sub { color: rgba(255,255,255,.55); }
+
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-top: 56px;
+    }
+    .svc-item {
+      text-align: center;
+      padding: 32px 16px;
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(201,168,76,.14);
+      background: rgba(255,255,255,.03);
+      transition: all var(--t);
+      cursor: default;
+    }
+    .svc-item:hover {
+      background: rgba(201,168,76,.1);
+      border-color: rgba(201,168,76,.38);
+      transform: translateY(-4px);
+    }
+    .svc-icon { font-size: 2.1rem; margin-bottom: 14px; display: block; }
+    .svc-name { font-size: .82rem; font-weight: 500; color: rgba(255,255,255,.82); letter-spacing: .02em; }
+
+    /* ===== GALLERY ===== */
+    .gallery { background: var(--bg); }
+    .gal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 48px;
+    }
+    .gal-item {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gal-item:nth-child(1) { grid-row: span 2; }
+    .gal-item:nth-child(6) { grid-row: span 2; }
+
+    .gal-inner {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform .4s ease;
+    }
+    .gal-item:nth-child(1) .gal-inner,
+    .gal-item:nth-child(6) .gal-inner { height: 414px; }
+    .gal-item:hover .gal-inner { transform: scale(1.04); }
+    .gal-icon { font-size: 2.4rem; opacity: .55; }
+    .gal-label {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--white);
+      text-shadow: 0 2px 10px rgba(0,0,0,.3);
+    }
+    .gal-over {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background var(--t);
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+    .gal-item:hover .gal-over { background: rgba(0,0,0,.18); }
+    .gal-cta {
+      background: var(--white);
+      color: var(--primary);
+      font-size: .73rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 100px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all var(--t);
+    }
+    .gal-item:hover .gal-cta { opacity: 1; transform: translateY(0); }
+    .gal-note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: .83rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .gal-note a { color: var(--primary); }
+
+    /* ===== REAL GALLERY GRID ===== */
+    .gal-grid-real {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 260px 260px;
+      gap: 14px;
+      margin-top: 48px;
+    }
+    .gal-item-r {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gal-item-r.tall { grid-row: span 2; }
+
+    .gal-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform .5s ease;
+    }
+    .gal-item-r:hover .gal-bg { transform: scale(1.05); }
+
+    /* gradient overlay */
+    .gal-item-r::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,.7) 100%);
+      z-index: 1;
+    }
+    .gal-cta-card::before { background: rgba(10,4,2,.78); }
+    .gal-cta-card { background: #1C0806; display:flex;align-items:center;justify-content:center; }
+
+    .gal-info {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .gal-tag {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(0,0,0,.3);
+      backdrop-filter: blur(4px);
+      padding: 3px 10px;
+      border-radius: 100px;
+      display: inline-block;
+      width: fit-content;
+    }
+    .gal-title-r {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--white);
+      text-shadow: 0 2px 10px rgba(0,0,0,.5);
+    }
+    .gal-cta-card .gal-info { display: none; }
+
+    @media (max-width: 768px) {
+      .gal-grid-real {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .gal-item-r.tall { grid-row: auto; height: 220px; }
+      .gal-item-r      { height: 200px; }
+    }
+    @media (max-width: 480px) {
+      .gal-grid-real { grid-template-columns: 1fr; }
+      .gal-item-r      { height: 220px; }
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews { background: var(--bg-dark); }
+    .rev-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 52px;
+      gap: 32px;
+    }
+    .rating-box {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 28px 36px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .rating-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .rating-stars { color: var(--accent); font-size: 1.1rem; letter-spacing: 4px; margin: 10px 0 6px; }
+    .rating-sub { font-size: .78rem; color: var(--text-muted); }
+    .ta-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--bg-dark);
+    }
+    .ta-dot {
+      width: 26px; height: 26px;
+      background: #00AA6C;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .65rem;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .ta-lbl { font-size: .73rem; color: var(--text-muted); text-align: left; }
+
+    .rev-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .rev-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--t);
+    }
+    .rev-card:hover { box-shadow: var(--shadow-md); }
+    .rev-stars { color: var(--accent); font-size: .88rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .rev-text {
+      font-size: .93rem;
+      line-height: 1.72;
+      color: var(--text);
+      margin-bottom: 22px;
+      font-style: italic;
+    }
+    .rev-auth { display: flex; align-items: center; gap: 12px; }
+    .rev-ava {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .rev-name { font-weight: 600; font-size: .9rem; }
+    .rev-date { font-size: .73rem; color: var(--text-muted); }
+
+    /* ===== HOW TO BOOK ===== */
+    .htb { background: var(--bg); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; position: relative; }
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 44px;
+      left: calc(16.66% + 16px);
+      right: calc(16.66% + 16px);
+      height: 1px;
+      background: linear-gradient(to right, var(--accent), var(--primary));
+    }
+    .step {
+      text-align: center;
+      padding: 40px 24px 32px;
+      background: var(--white);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .step:nth-child(2) .step-num { background: var(--accent); }
+    .step:nth-child(3) .step-num { background: var(--primary-light); }
+    .step h3 { font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 8px; }
+    .step p { font-size: .85rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px; }
+
+    .plat-btns { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .pbtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 8px 14px;
+      border-radius: var(--r);
+      font-size: .78rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all var(--t);
+    }
+    .pbtn-bk { background: #003580; color: var(--white); }
+    .pbtn-bk:hover { background: #002560; }
+    .pbtn-ag { background: #E1002A; color: var(--white); }
+    .pbtn-ag:hover { background: #B80022; }
+    .pbtn-wa { background: #25D366; color: var(--white); }
+    .pbtn-wa:hover { background: #1DA851; }
+
+    /* ===== CONTACT ===== */
+    .contact { background: var(--bg-dark); }
+    .con-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .con-info { display: flex; flex-direction: column; gap: 24px; }
+    .con-item { display: flex; gap: 16px; align-items: flex-start; }
+    .con-icon {
+      width: 48px; height: 48px;
+      background: var(--primary);
+      border-radius: var(--r);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .con-item label {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .con-item p { font-size: .93rem; color: var(--text); line-height: 1.55; }
+    .con-item a { color: var(--text); text-decoration: none; }
+    .con-item a:hover { color: var(--primary); }
+
+    .map-box {
+      height: 400px;
+      background: linear-gradient(135deg, #c8e6c9, #a5d6a7 40%, #81c784 100%);
+      border-radius: var(--r-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .map-box::before {
+      content: '';
+      position: absolute;
+      width: 220px; height: 220px;
+      background: rgba(255,255,255,.25);
+      border-radius: 50%;
+      top: 15%; left: 25%;
+    }
+    .map-box::after {
+      content: '';
+      position: absolute;
+      width: 130px; height: 130px;
+      background: rgba(255,255,255,.15);
+      border-radius: 50%;
+      bottom: 10%; right: 15%;
+    }
+    .map-icon { font-size: 3rem; position: relative; z-index: 1; }
+    .map-text { text-align: center; position: relative; z-index: 1; }
+    .map-text h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #1b5e20; }
+    .map-text p { font-size: .83rem; color: #2e7d32; margin-top: 4px; }
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white);
+      color: var(--primary);
+      padding: 10px 20px;
+      border-radius: var(--r);
+      font-size: .83rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      z-index: 1;
+      transition: box-shadow var(--t);
+    }
+    .map-link:hover { box-shadow: var(--shadow-md); }
+
+    /* ===== FOOTER ===== */
+    .footer { background: #0C0704; padding: 64px 0 0; }
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .foot-brand .fl {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 14px;
+    }
+    .foot-brand p { font-size: .83rem; color: rgba(255,255,255,.44); line-height: 1.72; margin-bottom: 22px; }
+    .soc { display: flex; gap: 10px; }
+    .soc-a {
+      width: 36px; height: 36px;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .85rem;
+      text-decoration: none;
+      color: rgba(255,255,255,.55);
+      transition: all var(--t);
+    }
+    .soc-a:hover { background: var(--primary); border-color: var(--primary); color: var(--white); }
+    .foot h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .foot-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .foot-links a { font-size: .83rem; color: rgba(255,255,255,.45); text-decoration: none; transition: color var(--t); }
+    .foot-links a:hover { color: var(--white); }
+    .foot-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+    }
+    .foot-bottom p { font-size: .78rem; color: rgba(255,255,255,.28); }
+
+    /* ===== WA FLOAT ===== */
+    .wa-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 998;
+      width: 58px; height: 58px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      text-decoration: none;
+      box-shadow: 0 8px 28px rgba(37,211,102,.4);
+      transition: all var(--t);
+      animation: wapulse 3s ease infinite;
+    }
+    @keyframes wapulse {
+      0%,100% { box-shadow: 0 8px 28px rgba(37,211,102,.4); }
+      50%      { box-shadow: 0 8px 44px rgba(37,211,102,.6); }
+    }
+    .wa-float:hover { transform: scale(1.1); background: #1DA851; }
+
+    /* ===== MODAL ===== */
+    .modal-bg {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.58);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(5px);
+      padding: 24px;
+    }
+    .modal-bg.open { display: flex; }
+    .modal {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+      animation: modalIn .3s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(.94) translateY(12px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-x {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: var(--bg);
+      border: none;
+      border-radius: 50%;
+      width: 32px; height: 32px;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--t);
+    }
+    .modal-x:hover { background: var(--bg-dark); }
+    .modal h3 { font-size: 1.55rem; color: var(--primary-dark); margin-bottom: 8px; }
+    .modal > p { font-size: .88rem; color: var(--text-muted); margin-bottom: 26px; }
+    .modal-opts { display: flex; flex-direction: column; gap: 11px; }
+    .mopt {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      border-radius: var(--r);
+      text-decoration: none;
+      transition: all var(--t);
+      border: none;
+      cursor: pointer;
+    }
+    .mopt:hover { transform: translateX(5px); filter: brightness(1.08); }
+    .mopt-bk  { background: #003580; color: var(--white); }
+    .mopt-ag  { background: #E1002A; color: var(--white); }
+    .mopt-wa  { background: #25D366; color: var(--white); }
+    .mopt-icon { font-size: 1.5rem; }
+    .mopt-body { flex: 1; }
+    .mopt-title { font-weight: 600; font-size: .93rem; }
+    .mopt-desc  { font-size: .73rem; opacity: .8; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1060px) {
+      .svc-grid { grid-template-columns: repeat(4, 1fr); }
+      .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 64px 0; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .bbar-inner { grid-template-columns: 1fr 1fr; }
+      .bbar-submit { grid-column: 1 / 3; padding: 18px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-vis { height: 300px; }
+      .rooms-grid { grid-template-columns: 1fr; }
+      .svc-grid { grid-template-columns: repeat(3, 1fr); }
+      .gal-grid { grid-template-columns: 1fr 1fr; }
+      .gal-item:nth-child(1),
+      .gal-item:nth-child(6) { grid-row: auto; }
+      .gal-inner, .gal-item:nth-child(1) .gal-inner, .gal-item:nth-child(6) .gal-inner { height: 180px !important; }
+      .rev-header { flex-direction: column; }
+      .rev-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .steps::before { display: none; }
+      .con-grid { grid-template-columns: 1fr; }
+      .foot-grid { grid-template-columns: 1fr; }
+      .foot-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .hero-stats { gap: 20px; }
+      .hero-arrow { width: 38px; height: 38px; font-size: 1.1rem; }
+      .hero-arrow-prev { left: 10px; }
+      .hero-arrow-next { right: 10px; }
+      .bbar-inner { grid-template-columns: 1fr; }
+      .bbar-submit { grid-column: auto; }
+      .svc-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-feats { grid-template-columns: 1fr; }
+    }
+
+    /* ===== EVENTS SECTION ===== */
+    .events-sec { padding: 0; background: var(--bg-dark); }
+    .events-hero {
+      position: relative; height: 500px;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    .events-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(100deg, rgba(8,3,1,.92) 0%, rgba(8,3,1,.75) 55%, rgba(8,3,1,.35) 100%),
+        url('img/bg-img/eventos.jpg') center/cover no-repeat;
+    }
+    .events-hero-content { position: relative; z-index: 1; }
+    .events-hero-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.1rem, 4.5vw, 3.6rem);
+      color: #fff; line-height: 1.15; margin: .6rem 0 1.1rem;
+    }
+    .events-hero-content h2 em { color: var(--accent-light); }
+    .events-hero-content p {
+      font-size: .95rem; color: rgba(255,255,255,.72); line-height: 1.85; max-width: 560px;
+    }
+    .events-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin: -80px 0 64px;
+      position: relative; z-index: 2;
+      padding: 0 24px;
+      max-width: 1200px; margin-left: auto; margin-right: auto;
+    }
+    .ev-card {
+      background: #fff; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 14px 44px rgba(0,0,0,.16);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .ev-card:hover { transform: translateY(-8px); box-shadow: 0 28px 64px rgba(0,0,0,.22); }
+    .ev-card-img {
+      height: 240px; position: relative; overflow: hidden;
+    }
+    .ev-card-img img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      display: block; transition: transform .5s ease;
+    }
+    .ev-card:hover .ev-card-img img { transform: scale(1.07); }
+    .ev-card-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,4,2,.55) 0%, rgba(10,4,2,.1) 60%, transparent 100%);
+    }
+    .ev-card-body { padding: 20px 20px 22px; }
+    .ev-card-body h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.1rem;
+      color: var(--primary-dark); margin-bottom: 7px;
+    }
+    .ev-card-body p { font-size: .8rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 12px; }
+    .ev-card-body ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .ev-card-body ul li {
+      font-size: .75rem; color: var(--text-muted);
+      padding-left: 16px; position: relative;
+    }
+    .ev-card-body ul li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .events-stats-wrap { max-width: 1200px; margin: 0 auto 0; padding: 0 24px 64px; }
+    .events-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      background: var(--primary-dark); border-radius: 14px; overflow: hidden;
+    }
+    .ev-stat {
+      text-align: center; padding: 32px 20px;
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .ev-stat:last-child { border-right: none; }
+    .ev-stat-num {
+      display: block; font-family: 'Playfair Display', serif;
+      font-size: 2.6rem; color: var(--accent); font-weight: 700; line-height: 1;
+    }
+    .ev-stat-lbl { font-size: .72rem; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .1em; margin-top: 4px; display: block; }
+    .events-quote-wrap { max-width: 860px; margin: 0 auto; text-align: center; padding: 64px 24px 80px; }
+    .events-quote { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2.3rem); color: var(--primary-dark); font-style: italic; line-height: 1.4; margin-bottom: 36px; }
+    .events-quote::before { content: '"'; color: var(--accent); font-size: 4rem; line-height: 0; vertical-align: -1rem; margin-right: 4px; }
+    .events-quote::after  { content: '"'; color: var(--accent); font-size: 4rem; line-height: 0; vertical-align: -1rem; margin-left: 4px; }
+    @media (max-width: 900px) {
+      .events-cards { grid-template-columns: repeat(2, 1fr); margin-top: 40px; }
+      .events-stats { grid-template-columns: repeat(2, 1fr); }
+      .ev-stat { border-right: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); }
+      .ev-stat:nth-child(2n) { border-right: none; }
+      .ev-stat:nth-child(3), .ev-stat:nth-child(4) { border-bottom: none; }
+    }
+    @media (max-width: 560px) {
+      .events-cards { grid-template-columns: 1fr; margin-top: 28px; padding: 0 16px; }
+      .events-hero { height: 380px; }
+      .events-stats { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ===== HERO SUPERTAG (estilo Copantl) ===== */
+    .hero-supertag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(201,168,76,.18);
+      border: 1px solid rgba(201,168,76,.45);
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 14px;
+    }
+    .hero-supertag-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:.25} }
+
+    /* ===== PROMO RIBBON (banner fino en nav) ===== */
+    .promo-ribbon {
+      background: var(--accent);
+      color: #1C1C1C;
+      text-align: center;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      padding: 7px 16px;
+      position: relative;
+      z-index: 200;
+    }
+    .promo-ribbon a { color: #1C1C1C; text-decoration: underline; margin-left: 8px; }
+    .promo-ribbon-close {
+      position: absolute; right: 16px; top: 50%;
+      transform: translateY(-50%);
+      background: none; border: none; cursor: pointer;
+      font-size: .85rem; color: #1C1C1C; opacity: .6;
+    }
+    .promo-ribbon-close:hover { opacity: 1; }
+
+    /* ===== PROMO MODAL ===== */
+    .promo-bg {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.65);
+      z-index: 99999;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity .35s ease;
+      backdrop-filter: blur(6px);
+    }
+    .promo-bg.open { opacity: 1; pointer-events: all; }
+    .promo-box {
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      max-width: 460px;
+      width: 92%;
+      position: relative;
+      transform: translateY(28px) scale(.97);
+      transition: transform .4s cubic-bezier(.34,1.56,.64,1);
+      box-shadow: 0 40px 100px rgba(0,0,0,.4);
+    }
+    .promo-bg.open .promo-box { transform: translateY(0) scale(1); }
+    .promo-head {
+      background: linear-gradient(140deg, #5C1E0D 0%, #8B3A1F 55%, #A84B2A 100%);
+      padding: 32px 28px 26px;
+      text-align: center;
+      position: relative;
+    }
+    .promo-head::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .promo-head-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #1C1C1C;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .promo-head-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 6px;
+      position: relative;
+    }
+    .promo-head-sub {
+      font-size: .85rem;
+      color: rgba(255,255,255,.75);
+      position: relative;
+    }
+    .promo-x {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      color: #fff; width: 30px; height: 30px;
+      border-radius: 50%; font-size: .9rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .promo-x:hover { background: rgba(255,255,255,.25); }
+    .promo-body { padding: 24px 28px 20px; }
+    .promo-offer-box {
+      display: flex; align-items: center; gap: 16px;
+      background: linear-gradient(135deg, rgba(139,58,31,.06), rgba(201,168,76,.1));
+      border: 1px solid rgba(201,168,76,.3);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+    .promo-pct {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      color: var(--primary);
+      font-weight: 700;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .promo-pct-details { flex: 1; }
+    .promo-pct-label { font-size: .72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .1em; }
+    .promo-pct-desc { font-size: .82rem; color: var(--text-muted); margin-top: 2px; line-height: 1.4; }
+    .promo-validity {
+      display: flex; align-items: center; gap: 7px;
+      font-size: .75rem; color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .promo-dot { width:7px; height:7px; border-radius:50%; background:#22c55e; animation:blink 1.5s infinite; flex-shrink:0; }
+    .promo-code-row {
+      text-align: center;
+      font-size: .8rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      padding: 10px;
+      background: var(--bg-dark);
+      border-radius: 8px;
+    }
+    .promo-code-row strong {
+      font-family: monospace;
+      font-size: 1rem;
+      color: var(--primary);
+      letter-spacing: .08em;
+    }
+    .promo-action-btns { display: flex; flex-direction: column; gap: 10px; }
+    .promo-skip-lnk {
+      text-align: center;
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+      cursor: pointer;
+    }
+    .promo-skip-lnk:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- ===== PROMO RIBBON ===== -->
+<div class="promo-ribbon" id="promoRibbon">
+  <span id="ribbonText">🎉 Oferta de temporada — Descuento especial este mes</span>
+  <a href="#" onclick="openPromo();return false;" id="ribbonLink">Ver promoción →</a>
+  <button class="promo-ribbon-close" onclick="document.getElementById('promoRibbon').style.display='none'">✕</button>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo">
+        <img src="img/core-img/logo_white.png" alt="Hotel El Campanario" style="height:36px;transition:filter .3s;" id="navLogoImg">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#habitaciones">Habitaciones</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#reservar" class="nav-cta">✦ Reservar</a></li>
+      </ul>
+      <button class="hamburger" onclick="navOpen()" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay-close" onclick="navClose()">✕</button>
+  <a href="#inicio"        onclick="navClose()">Inicio</a>
+  <a href="#habitaciones"  onclick="navClose()">Habitaciones</a>
+  <a href="#servicios"     onclick="navClose()">Servicios</a>
+  <a href="#galeria"       onclick="navClose()">Galería</a>
+  <a href="#reservar"      onclick="navClose()">Reservar</a>
+  <a href="#contacto"      onclick="navClose()">Contacto</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio">
+
+  <!-- Carousel slides -->
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active" style="background-image:url('img/bg-img/comedor.jpg');"></div>
+    <div class="hero-slide"        style="background-image:url('img/bg-img/eventos.jpg');"></div>
+  </div>
+  <div class="hero-texture"></div>
+
+  <!-- Prev / Next arrows -->
+  <button class="hero-arrow hero-arrow-prev" onclick="heroGo(-1)" aria-label="Anterior">&#8249;</button>
+  <button class="hero-arrow hero-arrow-next" onclick="heroGo(1)"  aria-label="Siguiente">&#8250;</button>
+
+  <!-- Body content -->
+  <div class="hero-body">
+    <div class="container">
+
+      <!-- BIG LOGO -->
+      <div class="hero-logo-wrap">
+        <img src="img/core-img/logo_white.png" alt="Hotel El Campanario" class="hero-logo-big">
+        <div class="hero-logo-divider">
+          <span></span>
+          <em>Comayagua, Honduras</em>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="hero-content">
+        <div class="hero-supertag">
+          <div class="hero-supertag-dot"></div>
+          Hotel 3 Estrellas &nbsp;·&nbsp; Comayagua, Honduras
+        </div>
+        <div class="hero-pill">⭐ <strong>4.4 / 5</strong> &nbsp;· 271 reseñas Google Maps</div>
+        <h1>El hotel que<br><em>lo tiene todo</em></h1>
+        <p class="hero-sub">Piscina · Restaurante Rooftop · Eventos · A 17 km del Aeropuerto Palmerola.</p>
+        <div class="hero-ctas">
+          <a href="#reservar" class="btn btn-accent">🗓 Reservar Ahora</a>
+          <a href="#habitaciones" class="btn btn-outline">Ver Habitaciones →</a>
+        </div>
+      </div>
+
+      <!-- Slide caption -->
+      <div class="slide-caption">
+        <div class="slide-caption-inner" id="slideCaption">🏊 Piscina Exterior</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer bar: dots + stats -->
+  <div class="hero-foot">
+    <div class="container">
+      <div class="hero-foot-inner">
+        <div class="hero-dots" id="heroDots">
+          <button class="hero-dot active" onclick="heroGoTo(0)"></button>
+          <button class="hero-dot"        onclick="heroGoTo(1)"></button>
+        </div>
+        <div class="hero-stats">
+          <div><span class="stat-val">4.4★</span><div class="stat-lbl">Calificación Google</div></div>
+          <div><span class="stat-val">271</span><div class="stat-lbl">Reseñas verificadas</div></div>
+          <div><span class="stat-val">17 km</span><div class="stat-lbl">Del aeropuerto</div></div>
+          <div><span class="stat-val">24/7</span><div class="stat-lbl">Recepción</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== BOOKING BAR ===== -->
+<div class="bbar">
+  <div class="container">
+    <div class="bbar-inner">
+      <div class="bfield">
+        <label for="ci">Check-in</label>
+        <input type="date" id="ci">
+      </div>
+      <div class="bfield">
+        <label for="co">Check-out</label>
+        <input type="date" id="co">
+      </div>
+      <div class="bfield">
+        <label for="adults">Adultos</label>
+        <select id="adults">
+          <option>1 adulto</option>
+          <option selected>2 adultos</option>
+          <option>3 adultos</option>
+          <option>4 adultos</option>
+          <option>5+ adultos</option>
+        </select>
+      </div>
+      <div class="bfield">
+        <label for="rooms">Habitaciones</label>
+        <select id="rooms">
+          <option selected>1 habitación</option>
+          <option>2 habitaciones</option>
+          <option>3 habitaciones</option>
+        </select>
+      </div>
+      <button class="bbar-submit" onclick="openModal()">Consultar disponibilidad →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="sobre-nosotros">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-vis reveal">
+        <div class="about-main"></div>
+        <div class="about-accent"></div>
+        <div class="about-badge">
+          <div class="badge-val">4.4 <span class="badge-stars">★★★★</span></div>
+          <div class="badge-lbl">271 reseñas en Google Maps</div>
+        </div>
+      </div>
+
+      <div class="reveal d2">
+        <span class="label">Sobre Nosotros</span>
+        <div class="orn">
+          <div class="orn-line"></div>
+          <span class="orn-icon">⛪</span>
+          <div class="orn-line"></div>
+        </div>
+        <h2 class="section-title">Un oasis de confort en Comayagua</h2>
+        <p class="section-sub">
+          Hotel El Campanario combina la calidez de la hospitalidad hondureña con todas las comodidades modernas. Nuestros huéspedes encuentran en nosotros un verdadero hogar lejos de casa.
+        </p>
+        <br>
+        <p class="section-sub" style="font-size:.9rem;">
+          Ubicados en <strong>Barrio Cabañas, junto al Mall Premier</strong>, y a solo <strong>17 km del Aeropuerto Internacional Palmerola (XPL)</strong>. Comayagua, declarada Patrimonio Cultural de Honduras, es el destino perfecto para viajeros de negocios y turistas.
+        </p>
+        <p class="section-sub" style="font-size:.85rem;margin-top:12px;padding:12px 16px;background:rgba(201,168,76,.12);border-left:3px solid var(--accent);border-radius:var(--r);">
+          🍽️ Nuestro restaurante <strong>Rooftop Campanario Center</strong> sirve cocina hondureña e internacional en un ambiente único con vista panorámica.
+        </p>
+        <div class="about-feats">
+          <div class="feat"><span class="feat-icon">🏊</span> Piscina exterior</div>
+          <div class="feat"><span class="feat-icon">🍽️</span> Restaurante propio</div>
+          <div class="feat"><span class="feat-icon">🌿</span> Jardines</div>
+          <div class="feat"><span class="feat-icon">📡</span> WiFi gratis</div>
+          <div class="feat"><span class="feat-icon">🎪</span> Salón de eventos</div>
+          <div class="feat"><span class="feat-icon">🎭</span> Convenciones</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROOMS ===== -->
+<section class="rooms" id="habitaciones">
+  <div class="container">
+    <div class="tc reveal">
+      <span class="label">Nuestras Habitaciones</span>
+      <div class="orn" style="justify-content:center;">
+        <div class="orn-line"></div><span class="orn-icon">🛏️</span><div class="orn-line"></div>
+      </div>
+      <h2 class="section-title">Confort para cada viajero</h2>
+      <p class="section-sub">Todas las habitaciones incluyen aire acondicionado, WiFi de alta velocidad y balcón privado.</p>
+    </div>
+
+    <div class="rooms-grid">
+
+      <!-- Suite Premium King -->
+      <div class="room-card reveal d1">
+        <div class="room-img" style="background:linear-gradient(to bottom,rgba(28,8,6,.18) 0%,rgba(28,8,6,.55) 100%), url('img/bg-img/piscina.jpg') center/cover no-repeat;">
+          <div class="room-chip">⭐ Más Popular</div>
+          <div class="room-img-cap">👥 hasta 5 personas</div>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Suite Premium King</h3>
+          <p class="room-desc">Nuestra suite más exclusiva: cama King Size, jacuzzi privado, balcón con vista al jardín y decoración de lujo. Ideal para parejas y familias.</p>
+          <div class="room-tags">
+            <span class="tag">🛏 King Size</span>
+            <span class="tag">🛁 Jacuzzi</span>
+            <span class="tag">🏡 Balcón</span>
+            <span class="tag">❄️ A/C</span>
+            <span class="tag">📡 WiFi</span>
+            <span class="tag">📺 Smart TV</span>
+            <span class="tag">👥 Hasta 5 personas</span>
+          </div>
+          <div class="room-foot">
+            <div>
+              <span class="room-price-val">$125</span>
+              <span class="room-price-sub">por noche · desayuno incluido</span>
+            </div>
+            <button class="btn btn-primary" onclick="openModal()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- King Estándar -->
+      <div class="room-card reveal d2">
+        <div class="room-img" style="background:linear-gradient(to bottom,rgba(10,6,2,.12) 0%,rgba(10,6,2,.58) 100%), url('img/bg-img/eventos.jpg') center/cover no-repeat;">
+          <div class="room-img-cap">👥 hasta 3 personas</div>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Habitación King Estándar</h3>
+          <p class="room-desc">Amplia y luminosa con cama King Size y todas las comodidades. Perfecta para viajeros de negocios que buscan comodidad y funcionalidad.</p>
+          <div class="room-tags">
+            <span class="tag">🛏 King Size</span>
+            <span class="tag">🏡 Balcón</span>
+            <span class="tag">❄️ A/C</span>
+            <span class="tag">📡 WiFi</span>
+            <span class="tag">📺 Smart TV</span>
+            <span class="tag">☕ Cafetera</span>
+            <span class="tag">👥 Hasta 3 personas</span>
+          </div>
+          <div class="room-foot">
+            <div>
+              <span class="room-price-val">$98</span>
+              <span class="room-price-sub">por noche · desayuno incluido</span>
+            </div>
+            <button class="btn btn-primary" onclick="openModal()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doble -->
+      <div class="room-card reveal d3">
+        <div class="room-img" style="background:linear-gradient(to bottom,rgba(10,6,2,.1) 0%,rgba(10,6,2,.6) 100%), url('img/bg-img/comedor.jpg') center/cover no-repeat;">
+          <div class="room-img-cap">👥 hasta 2 personas</div>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Habitación Doble</h3>
+          <p class="room-desc">Dos camas individuales en un espacio cómodo y bien equipado. Ideal para amigos o compañeros de viaje que buscan practicidad.</p>
+          <div class="room-tags">
+            <span class="tag">🛏 2 Camas</span>
+            <span class="tag">❄️ A/C</span>
+            <span class="tag">📡 WiFi</span>
+            <span class="tag">📺 TV Cable</span>
+            <span class="tag">🚿 Baño privado</span>
+            <span class="tag">👥 Hasta 2 personas</span>
+          </div>
+          <div class="room-foot">
+            <div>
+              <span class="room-price-val">$75</span>
+              <span class="room-price-sub">por noche</span>
+            </div>
+            <button class="btn btn-primary" onclick="openModal()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Individual -->
+      <div class="room-card reveal d4">
+        <div class="room-img" style="background:linear-gradient(to bottom,rgba(28,8,6,.25) 0%,rgba(28,8,6,.65) 100%), url('img/bg-img/piscina.jpg') bottom/cover no-repeat;">
+          <div class="room-img-cap">👤 1 persona</div>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Habitación Individual</h3>
+          <p class="room-desc">La opción perfecta para el viajero solo. Acogedora y funcional con todos los servicios esenciales para un descanso reparador.</p>
+          <div class="room-tags">
+            <span class="tag">🛏 Cama Individual</span>
+            <span class="tag">❄️ A/C</span>
+            <span class="tag">📡 WiFi</span>
+            <span class="tag">📺 TV Cable</span>
+            <span class="tag">🚿 Baño privado</span>
+            <span class="tag">👤 1 persona</span>
+          </div>
+          <div class="room-foot">
+            <div>
+              <span class="room-price-val">$55</span>
+              <span class="room-price-sub">por noche</span>
+            </div>
+            <button class="btn btn-primary" onclick="openModal()">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== EVENTS SECTION ===== -->
+<section class="events-sec" id="eventos">
+
+  <!-- Hero banner de eventos -->
+  <div class="events-hero">
+    <div class="events-hero-bg"></div>
+    <div class="events-hero-content container">
+      <span class="label" style="color:var(--accent);">Celebra con nosotros</span>
+      <h2>Tu celebración merece<br><em>el escenario perfecto</em></h2>
+      <p>Salón de banquetes para hasta 200 personas · Decoración personalizada · Catering · Coordinación completa de tu evento en Comayagua.</p>
+    </div>
+  </div>
+
+  <!-- 4 tarjetas de tipos de evento -->
+  <div class="events-cards">
+
+    <div class="ev-card reveal d1">
+      <div class="ev-card-img">
+        <img src="img/bg-img/ev-boda.jpg" alt="Salón para bodas">
+      </div>
+      <div class="ev-card-body">
+        <h3>Bodas</h3>
+        <p>El día más especial de tu vida merece el escenario soñado. Cada detalle, coordinado con amor.</p>
+        <ul>
+          <li>Decoración floral personalizada</li>
+          <li>Banquete y pastel nupcial</li>
+          <li>Coordinadora dedicada</li>
+          <li>Pista de baile y DJ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ev-card reveal d2">
+      <div class="ev-card-img">
+        <img src="img/bg-img/ev-quince.jpg" alt="Quinceañeros y celebraciones">
+      </div>
+      <div class="ev-card-body">
+        <h3>Quinceañeros</h3>
+        <p>Una noche mágica que ella recordará toda la vida. Hazla brillar en nuestro salón dorado.</p>
+        <ul>
+          <li>Ambientación temática a elegir</li>
+          <li>Vals y pista de baile</li>
+          <li>Servicio de catering completo</li>
+          <li>Iluminación y efectos especiales</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ev-card reveal d3">
+      <div class="ev-card-img">
+        <img src="img/bg-img/ev-corp.jpg" alt="Eventos corporativos">
+      </div>
+      <div class="ev-card-body">
+        <h3>Eventos Corporativos</h3>
+        <p>Salas equipadas con tecnología de punta para conferencias, lanzamientos y reuniones ejecutivas.</p>
+        <ul>
+          <li>Proyector y pantalla HD</li>
+          <li>WiFi empresarial de alta velocidad</li>
+          <li>Coffee break y catering ejecutivo</li>
+          <li>Translados desde el aeropuerto</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ev-card reveal d4">
+      <div class="ev-card-img">
+        <img src="img/bg-img/ev-fiesta.jpg" alt="Fiestas y celebraciones">
+      </div>
+      <div class="ev-card-body">
+        <h3>Fiestas & Celebraciones</h3>
+        <p>Cumpleaños, reuniones familiares, graduaciones. Cada celebración con tu estilo y personalidad.</p>
+        <ul>
+          <li>Sistema de sonido profesional</li>
+          <li>Decoración personalizada</li>
+          <li>Menú a tu gusto</li>
+          <li>Servicio de barra incluido</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Stats -->
+  <div class="events-stats-wrap">
+    <div class="events-stats reveal">
+      <div class="ev-stat">
+        <span class="ev-stat-num">200</span>
+        <span class="ev-stat-lbl">Personas de capacidad</span>
+      </div>
+      <div class="ev-stat">
+        <span class="ev-stat-num">10+</span>
+        <span class="ev-stat-lbl">Años de experiencia</span>
+      </div>
+      <div class="ev-stat">
+        <span class="ev-stat-num">500+</span>
+        <span class="ev-stat-lbl">Eventos realizados</span>
+      </div>
+      <div class="ev-stat">
+        <span class="ev-stat-num">24/7</span>
+        <span class="ev-stat-lbl">Coordinación disponible</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frase inspiradora + CTA -->
+  <div class="events-quote-wrap reveal">
+    <p class="events-quote">Los momentos más importantes de la vida merecen un escenario inolvidable</p>
+    <a href="https://wa.me/50431786784?text=Hola%2C%20me%20interesa%20información%20sobre%20eventos%20y%20banquetes%20en%20Hotel%20El%20Campanario.%20%C2%BFPodrían%20darme%20más%20información%3F"
+       target="_blank" class="btn btn-accent" style="font-size:1rem;padding:16px 36px;">
+      💬 Consultar disponibilidad de eventos
+    </a>
+  </div>
+
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="tc reveal">
+      <span class="label">Servicios & Amenidades</span>
+      <div class="orn" style="justify-content:center;">
+        <div class="orn-line" style="background:linear-gradient(to right,transparent,rgba(201,168,76,.5),transparent);"></div>
+        <span class="orn-icon">✨</span>
+        <div class="orn-line" style="background:linear-gradient(to right,transparent,rgba(201,168,76,.5),transparent);"></div>
+      </div>
+      <h2 class="section-title">Todo lo que necesitas</h2>
+      <p class="section-sub">Diseñados para que tu estadía sea perfecta, ya sea por negocios o placer.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-item reveal d1"><span class="svc-icon">🏊</span><span class="svc-name">Piscina Exterior</span></div>
+      <div class="svc-item reveal d1"><span class="svc-icon">🍽️</span><span class="svc-name">Restaurante</span></div>
+      <div class="svc-item reveal d2"><span class="svc-icon">📡</span><span class="svc-name">WiFi Gratis</span></div>
+      <div class="svc-item reveal d2"><span class="svc-icon">🚗</span><span class="svc-name">Parqueo Gratis</span></div>
+      <div class="svc-item reveal d3"><span class="svc-icon">❄️</span><span class="svc-name">Aire Acondicionado</span></div>
+      <div class="svc-item reveal d3"><span class="svc-icon">🛎️</span><span class="svc-name">Recepción 24h</span></div>
+      <div class="svc-item reveal d4"><span class="svc-icon">🎪</span><span class="svc-name">Convenciones</span></div>
+      <div class="svc-item reveal d4"><span class="svc-icon">🎉</span><span class="svc-name">Área de Eventos</span></div>
+      <div class="svc-item reveal"><span class="svc-icon">🍸</span><span class="svc-name">Bar</span></div>
+      <div class="svc-item reveal"><span class="svc-icon">🌿</span><span class="svc-name">Jardín</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery" id="galeria">
+  <div class="container">
+    <div class="tc reveal">
+      <span class="label">Galería</span>
+      <div class="orn" style="justify-content:center;">
+        <div class="orn-line"></div><span class="orn-icon">📸</span><div class="orn-line"></div>
+      </div>
+      <h2 class="section-title">Conoce nuestros espacios</h2>
+    </div>
+    <div class="gal-grid-real">
+
+      <!-- Piscina — grande izquierda -->
+      <div class="gal-item-r tall reveal d1">
+        <div class="gal-bg" style="background-image:url('img/bg-img/piscina.jpg');"></div>
+        <div class="gal-info">
+          <span class="gal-tag">Servicios</span>
+          <span class="gal-title-r">Piscina Exterior</span>
+        </div>
+      </div>
+
+      <!-- Restaurante — arriba centro -->
+      <div class="gal-item-r reveal d2">
+        <div class="gal-bg" style="background-image:url('img/bg-img/comedor.jpg');"></div>
+        <div class="gal-info">
+          <span class="gal-tag">Gastronomía</span>
+          <span class="gal-title-r">Restaurante Rooftop</span>
+        </div>
+      </div>
+
+      <!-- Eventos — abajo centro -->
+      <div class="gal-item-r reveal d3">
+        <div class="gal-bg" style="background-image:url('img/bg-img/eventos.jpg');"></div>
+        <div class="gal-info">
+          <span class="gal-tag">Eventos</span>
+          <span class="gal-title-r">Salón de Banquetes</span>
+        </div>
+      </div>
+
+      <!-- CTA — grande derecha -->
+      <div class="gal-item-r tall gal-cta-card reveal d4">
+        <div style="text-align:center;padding:40px 28px;">
+          <div style="font-size:3rem;margin-bottom:16px;">📸</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--white);margin-bottom:12px;">¿Tienes fotos del hotel?</h3>
+          <p style="font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:24px;">Síguenos en Facebook para ver las últimas fotos de habitaciones, jardín y más.</p>
+          <a href="https://www.facebook.com/hotelecampanario1" target="_blank" class="btn btn-accent" style="font-size:.82rem;">Ver Facebook →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews" id="resenas">
+  <div class="container">
+    <div class="rev-header reveal">
+      <div>
+        <span class="label">Opiniones de Huéspedes</span>
+        <div class="orn"><div class="orn-line"></div><span class="orn-icon">⭐</span><div class="orn-line"></div></div>
+        <h2 class="section-title">Lo que dicen nuestros huéspedes</h2>
+        <p class="section-sub">Más de 271 familias y viajeros han confiado en nosotros para su descanso en Comayagua.</p>
+      </div>
+      <div class="rating-box reveal d2">
+        <div class="rating-num">4.4</div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-sub">Basado en 271 reseñas</div>
+        <div class="ta-row">
+          <div class="ta-dot">TA</div>
+          <div class="ta-lbl">También en<br><strong>TripAdvisor</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card reveal d1">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Excelente opción en Comayagua. El personal es muy amable y atento. La piscina está impecable y el restaurante sirve comida deliciosa y fresca. Definitivamente regresaremos."</p>
+        <div class="rev-auth">
+          <div class="rev-ava" style="background:var(--primary);">M</div>
+          <div>
+            <div class="rev-name">María Fernanda R.</div>
+            <div class="rev-date">Tegucigalpa · Junio 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card reveal d2">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Perfecto para una escapada de fin de semana. La habitación muy limpia y cómoda, con un balcón increíble. La ubicación es ideal, cerca de todo en Comayagua. El desayuno excelente."</p>
+        <div class="rev-auth">
+          <div class="rev-ava" style="background:var(--accent);">C</div>
+          <div>
+            <div class="rev-name">Carlos Eduardo M.</div>
+            <div class="rev-date">San Pedro Sula · Mayo 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card reveal d3">
+        <div class="rev-stars">★★★★☆</div>
+        <p class="rev-text">"Muy buen hotel para el precio. El jardín es tranquilo y hermoso. La recepción atiende las 24 horas y siempre están dispuestos a ayudar. Lugar ideal para descansar."</p>
+        <div class="rev-auth">
+          <div class="rev-ava" style="background:#6B2C17;">A</div>
+          <div>
+            <div class="rev-name">Ana Lucía V.</div>
+            <div class="rev-date">La Ceiba · Abril 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card reveal d4">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Viajamos por negocios y el hotel superó todas nuestras expectativas. El salón de convenciones está bien equipado. Sin duda el mejor hotel de Comayagua para viajes corporativos."</p>
+        <div class="rev-auth">
+          <div class="rev-ava" style="background:#2C3A6B;">R</div>
+          <div>
+            <div class="rev-name">Roberto Alejandro S.</div>
+            <div class="rev-date">Empresario · Marzo 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW TO BOOK ===== -->
+<section class="htb" id="reservar">
+  <div class="container">
+    <div class="tc reveal">
+      <span class="label">Cómo Reservar</span>
+      <div class="orn" style="justify-content:center;">
+        <div class="orn-line"></div><span class="orn-icon">🗓️</span><div class="orn-line"></div>
+      </div>
+      <h2 class="section-title">Tu reserva en 3 simples pasos</h2>
+      <p class="section-sub">Reserva por Booking.com, Agoda o escríbenos directamente por WhatsApp para atención personalizada.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal d1">
+        <div class="step-num">1</div>
+        <h3>Elige tus fechas</h3>
+        <p>Selecciona tu fecha de llegada y salida en el buscador de disponibilidad que está en la parte superior de esta página.</p>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-num">2</div>
+        <h3>Selecciona dónde reservar</h3>
+        <p>Compara precios en las plataformas de tu preferencia o contáctanos directamente por WhatsApp.</p>
+        <div class="plat-btns">
+          <a href="https://www.booking.com/hotel/hn/el-campanario.html" target="_blank" class="pbtn pbtn-bk">🏨 Booking.com</a>
+          <a href="https://www.agoda.com/es-es/pages/agoda/default/hotel_list.aspx?city=17706" target="_blank" class="pbtn pbtn-ag">🌐 Agoda</a>
+        </div>
+      </div>
+      <div class="step reveal d3">
+        <div class="step-num">3</div>
+        <h3>Confirma y ¡listo!</h3>
+        <p>¿Prefieres atención personalizada? Escríbenos por WhatsApp y confirmamos tu reserva al instante.</p>
+        <div class="plat-btns">
+          <a href="https://wa.me/50431786784?text=Hola%2C%20me%20interesa%20reservar%20en%20Hotel%20El%20Campanario.%20%C2%BFTienen%20disponibilidad%3F" target="_blank" class="pbtn pbtn-wa">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="tc reveal" style="margin-bottom:60px;">
+      <span class="label">Contáctanos</span>
+      <div class="orn" style="justify-content:center;">
+        <div class="orn-line"></div><span class="orn-icon">📍</span><div class="orn-line"></div>
+      </div>
+      <h2 class="section-title">Estamos aquí para ayudarte</h2>
+    </div>
+    <div class="con-grid">
+      <div class="con-info reveal">
+        <div class="con-item">
+          <div class="con-icon">📍</div>
+          <div>
+            <label>Dirección</label>
+            <p>Bo. Cabañas, calle del Mall Premier<br>Comayagua, Honduras, CP 12101</p>
+          </div>
+        </div>
+        <div class="con-item">
+          <div class="con-icon">📞</div>
+          <div>
+            <label>Teléfono</label>
+            <p><a href="tel:+50431786784">(504) 3178-6784</a></p>
+          </div>
+        </div>
+        <div class="con-item">
+          <div class="con-icon">✉️</div>
+          <div>
+            <label>Correo Electrónico</label>
+            <p><a href="mailto:hotelelcampanario01@gmail.com">hotelelcampanario01@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="con-item">
+          <div class="con-icon">🕐</div>
+          <div>
+            <label>Horarios</label>
+            <p>Check-in: 1:30 PM &nbsp;|&nbsp; Check-out: 12:00 PM<br>Recepción: 24 horas, todos los días</p>
+          </div>
+        </div>
+        <div class="con-item">
+          <div class="con-icon">✈️</div>
+          <div>
+            <label>Aeropuerto más cercano</label>
+            <p>Aeropuerto Internacional Palmerola (XPL)<br>A solo 17 km del hotel</p>
+          </div>
+        </div>
+        <a href="https://wa.me/50431786784?text=Hola%2C%20necesito%20información%20sobre%20Hotel%20El%20Campanario" target="_blank" class="btn btn-wa" style="width:fit-content;margin-top:8px;">
+          💬 Escribir por WhatsApp
+        </a>
+      </div>
+      <div class="reveal d2">
+        <div class="map-box">
+          <span class="map-icon">🗺️</span>
+          <div class="map-text">
+            <h4>Hotel El Campanario</h4>
+            <p>Bo. Cabañas, Comayagua, Honduras</p>
+          </div>
+          <a href="https://maps.google.com/?q=Hotel+El+Campanario+Comayagua+Honduras" target="_blank" class="map-link">
+            📍 Abrir en Google Maps
+          </a>
+        </div>
+        <!-- PARA INTEGRAR GOOGLE MAPS REAL: reemplaza el div .map-box con:
+        <iframe
+          src="https://www.google.com/maps/embed?pb=TU_EMBED_URL_AQUI"
+          width="100%" height="400" style="border:0;border-radius:10px;"
+          allowfullscreen loading="lazy">
+        </iframe>
+        -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#inicio" class="fl">
+        <img src="img/core-img/logo_white.png" alt="Hotel El Campanario" style="height:48px;filter:brightness(0) invert(1);opacity:.85;">
+      </a>
+        <p>Tu hogar lejos de casa en el corazón de Comayagua, Honduras. Hospitalidad genuina, comodidad moderna, memorias inolvidables.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/hotelecampanario1" target="_blank" class="soc-a" aria-label="Facebook">f</a>
+          <a href="https://wa.me/50431786784" target="_blank" class="soc-a" aria-label="WhatsApp">💬</a>
+          <a href="mailto:hotelelcampanario01@gmail.com" class="soc-a" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div class="foot">
+        <h4>Navegación</h4>
+        <ul class="foot-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#habitaciones">Habitaciones</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Reservas</h4>
+        <ul class="foot-links">
+          <li><a href="https://www.booking.com/hotel/hn/el-campanario.html" target="_blank">Booking.com</a></li>
+          <li><a href="https://www.agoda.com" target="_blank">Agoda</a></li>
+          <li><a href="https://www.tripadvisor.com" target="_blank">TripAdvisor</a></li>
+          <li><a href="https://wa.me/50431786784" target="_blank">WhatsApp directo</a></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Servicios</h4>
+        <ul class="foot-links">
+          <li><a href="#servicios">Piscina</a></li>
+          <li><a href="#servicios">Restaurante</a></li>
+          <li><a href="#servicios">Convenciones</a></li>
+          <li><a href="#servicios">Eventos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2025 Hotel El Campanario · Comayagua, Honduras · Todos los derechos reservados</p>
+      <p>Hecho con ♥ en Honduras</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/50431786784?text=Hola%2C%20me%20interesa%20hacer%20una%20reserva%20en%20Hotel%20El%20Campanario"
+   target="_blank"
+   class="wa-float"
+   title="Reservar por WhatsApp"
+   aria-label="Contactar por WhatsApp">
+  💬
+</a>
+
+<!-- ===== PROMO MODAL ===== -->
+<div class="promo-bg" id="promoModal">
+  <div class="promo-box">
+    <div class="promo-head">
+      <button class="promo-x" onclick="closePromo()">✕</button>
+      <div class="promo-head-badge" id="promoBadge">🎉 Oferta Especial</div>
+      <h2 class="promo-head-title" id="promoTitle">Promoción del Mes</h2>
+      <p class="promo-head-sub" id="promoSub">Aprovecha este descuento exclusivo solo este mes</p>
+    </div>
+    <div class="promo-body">
+      <div class="promo-offer-box">
+        <div class="promo-pct" id="promoPct">20%</div>
+        <div class="promo-pct-details">
+          <div class="promo-pct-label">DE DESCUENTO</div>
+          <div class="promo-pct-desc" id="promoDesc">Suite Premium King · Mínimo 2 noches</div>
+        </div>
+      </div>
+      <div class="promo-validity">
+        <div class="promo-dot"></div>
+        <span id="promoValidity">Válido hasta el 30 de junio de 2026</span>
+      </div>
+      <div class="promo-code-row">
+        Código de descuento: <strong id="promoCode">CAMP-JUN26</strong>
+        <br><small style="color:#999;">Menciónalo al reservar por WhatsApp</small>
+      </div>
+      <div class="promo-action-btns">
+        <a id="promoWaBtn" href="https://wa.me/50431786784?text=Hola%2C+quiero+la+promo+CAMP-JUN26" target="_blank" class="btn btn-wa" style="text-align:center;">
+          💬 Reservar ahora por WhatsApp
+        </a>
+        <a href="https://www.booking.com/hotel/hn/el-campanario.html" target="_blank" class="btn btn-primary" style="text-align:center;background:var(--primary);">
+          🏨 Ver en Booking.com
+        </a>
+      </div>
+      <p class="promo-skip-lnk" onclick="closePromo()">No gracias, continuar al sitio →</p>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Modal -->
+<div class="modal-bg" id="bookModal">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()">✕</button>
+    <h3>¿Dónde deseas reservar?</h3>
+    <p>Elige tu plataforma preferida o escríbenos directamente por WhatsApp para atención personalizada.</p>
+    <div class="modal-opts">
+      <a href="https://www.booking.com/hotel/hn/el-campanario.html" target="_blank" class="mopt mopt-bk">
+        <span class="mopt-icon">🏨</span>
+        <div class="mopt-body">
+          <div class="mopt-title">Booking.com</div>
+          <div class="mopt-desc">Reserva segura · Cancelación gratuita disponible</div>
+        </div>
+        <span>→</span>
+      </a>
+      <a href="https://www.agoda.com/es-es/pages/agoda/default/hotel_list.aspx?city=17706" target="_blank" class="mopt mopt-ag">
+        <span class="mopt-icon">🌐</span>
+        <div class="mopt-body">
+          <div class="mopt-title">Agoda</div>
+          <div class="mopt-desc">Precios competitivos · Puntos de recompensa</div>
+        </div>
+        <span>→</span>
+      </a>
+      <a href="https://wa.me/50431786784?text=Hola%2C%20me%20interesa%20hacer%20una%20reserva%20en%20Hotel%20El%20Campanario.%20%C2%BFTienen%20disponibilidad%3F" target="_blank" class="mopt mopt-wa">
+        <span class="mopt-icon">💬</span>
+        <div class="mopt-body">
+          <div class="mopt-title">WhatsApp directo</div>
+          <div class="mopt-desc">Atención personalizada · Respuesta inmediata</div>
+        </div>
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ===== HERO CAROUSEL ===== */
+  const SLIDES = [
+    { el: null, caption: '🍽️ Restaurante Rooftop Campanario' },
+    { el: null, caption: '🎉 Salón de Eventos & Banquetes' },
+  ];
+  const slideEls   = document.querySelectorAll('.hero-slide');
+  const dotEls     = document.querySelectorAll('.hero-dot');
+  const captionEl  = document.getElementById('slideCaption');
+  let current = 0;
+  let autoTimer;
+
+  function heroShow(idx) {
+    slideEls[current].classList.remove('active');
+    dotEls[current].classList.remove('active');
+    current = (idx + slideEls.length) % slideEls.length;
+    slideEls[current].classList.add('active');
+    dotEls[current].classList.add('active');
+    captionEl.textContent = SLIDES[current].caption;
+  }
+
+  function heroGo(dir)    { clearAuto(); heroShow(current + dir); startAuto(); }
+  function heroGoTo(idx)  { clearAuto(); heroShow(idx);           startAuto(); }
+  function startAuto()    { autoTimer = setInterval(() => heroShow(current + 1), 5000); }
+  function clearAuto()    { clearInterval(autoTimer); }
+
+  startAuto();
+
+  // Pause on hover
+  document.querySelector('.hero').addEventListener('mouseenter', clearAuto);
+  document.querySelector('.hero').addEventListener('mouseleave', startAuto);
+
+  // Drag / swipe support
+  let dragStartX = null;
+  const heroEl = document.querySelector('.hero');
+
+  heroEl.addEventListener('mousedown',  e => { dragStartX = e.clientX; });
+  heroEl.addEventListener('touchstart', e => { dragStartX = e.touches[0].clientX; }, { passive: true });
+
+  heroEl.addEventListener('mouseup', e => {
+    if (dragStartX === null) return;
+    const diff = e.clientX - dragStartX;
+    if (Math.abs(diff) > 50) heroGo(diff < 0 ? 1 : -1);
+    dragStartX = null;
+  });
+  heroEl.addEventListener('touchend', e => {
+    if (dragStartX === null) return;
+    const diff = e.changedTouches[0].clientX - dragStartX;
+    if (Math.abs(diff) > 40) heroGo(diff < 0 ? 1 : -1);
+    dragStartX = null;
+  });
+
+  /* --- Nav scroll --- */
+  const nav = document.getElementById('mainNav');
+  const logoImg = document.getElementById('navLogoImg');
+  window.addEventListener('scroll', () => {
+    const s = scrollY > 55;
+    nav.classList.toggle('scrolled', s);
+    if (logoImg) logoImg.style.filter = s ? 'none' : '';
+  }, { passive: true });
+
+  /* --- Mobile menu --- */
+  function navOpen()  { document.getElementById('navOverlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function navClose() { document.getElementById('navOverlay').classList.remove('open'); document.body.style.overflow = ''; }
+
+  /* --- Booking modal --- */
+  function openModal()  { document.getElementById('bookModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeModal() { document.getElementById('bookModal').classList.remove('open'); document.body.style.overflow = ''; }
+  document.getElementById('bookModal').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+
+  /* --- Scroll reveal --- */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+  }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* --- Default dates --- */
+  const pad  = n => String(n).padStart(2, '0');
+  const fmt  = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+  const td   = new Date();
+  const tmrw = new Date(td); tmrw.setDate(td.getDate() + 1);
+  document.getElementById('ci').value = fmt(td);
+  document.getElementById('co').value = fmt(tmrw);
+  document.getElementById('ci').min = fmt(td);
+  document.getElementById('co').min = fmt(tmrw);
+
+  /* Keep checkout after checkin */
+  document.getElementById('ci').addEventListener('change', function() {
+    const next = new Date(this.value); next.setDate(next.getDate() + 1);
+    document.getElementById('co').min   = fmt(next);
+    document.getElementById('co').value = fmt(next);
+  });
+
+  /* --- Smooth anchor scroll --- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - nav.offsetHeight, behavior: 'smooth' });
+    });
+  });
+
+  /* ===== PROMOCIONES MENSUALES ===== */
+  const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const DIASMES = [31,28,29,31,30,31,30,31,31,30,31,30,31];
+  const PROMOS = {
+    1:  { badge:'❄️ Oferta Enero',       title:'Año Nuevo en El Campanario',    sub:'Empieza el año con una escapada perfecta',          pct:'15%',    desc:'En todas las habitaciones · Mínimo 1 noche',      code:'CAMP-ENE' },
+    2:  { badge:'💕 San Valentín',        title:'Escápate con tu amor',          sub:'Paquete romántico especial para parejas',            pct:'20%',    desc:'Suite Premium King · Incluye cena romántica',      code:'CAMP-FEB' },
+    3:  { badge:'🌸 Oferta Marzo',        title:'Bienvenida la Temporada',       sub:'Renueva energías en nuestro hotel',                  pct:'15%',    desc:'Habitaciones estándar · 2+ noches',                code:'CAMP-MAR' },
+    4:  { badge:'🌴 Semana Santa',        title:'Vacaciones de Semana Santa',    sub:'Reserva con anticipación y ahorra más',              pct:'25%',    desc:'Reservando con 15 días de anticipación',           code:'CAMP-ABR' },
+    5:  { badge:'🎉 Oferta Mayo',         title:'Mayo de Aventura',              sub:'Explora Comayagua con nosotros',                     pct:'15%',    desc:'Habitaciones estándar · Mínimo 2 noches',          code:'CAMP-MAY' },
+    6:  { badge:'☀️ Verano 2026',         title:'Verano en El Campanario',       sub:'Aprovecha esta promo exclusiva del mes',             pct:'20%',    desc:'Suite Premium King · Mínimo 2 noches',             code:'CAMP-JUN' },
+    7:  { badge:'🏖️ Julio Vacacional',    title:'Julio de Vacaciones Familia',   sub:'Paquete familiar especial este mes',                 pct:'20%',    desc:'Habitación Doble · Incluye desayuno',              code:'CAMP-JUL' },
+    8:  { badge:'🎒 Oferta Agosto',       title:'Fin de Vacaciones',             sub:'Último mes para precios especiales de verano',       pct:'15%',    desc:'Todas las habitaciones · Sin mínimo de noches',    code:'CAMP-AGO' },
+    9:  { badge:'🇭🇳 Fiestas Patrias',    title:'Patrias en El Campanario',      sub:'Celebra la independencia de Honduras con nosotros', pct:'15%',    desc:'Todas las habitaciones · 15 de Septiembre',        code:'CAMP-SEP' },
+    10: { badge:'🍂 Oferta Octubre',      title:'Octubre de Sorpresas',          sub:'Precios especiales de temporada',                    pct:'15%',    desc:'Habitaciones estándar · 2+ noches',                code:'CAMP-OCT' },
+    11: { badge:'🦃 Pre-Navidad',         title:'Mes de Gratitud',               sub:'Reserva antes de las fiestas y ahorra',              pct:'20%',    desc:'Suite Premium · Incluye cena especial',            code:'CAMP-NOV' },
+    12: { badge:'🎄 Navidad & Año Nuevo', title:'Temporada de Fiestas',          sub:'Celebra con tu familia en El Campanario',            pct:'PAQUETE', desc:'Navidad + Año Nuevo · Desayuno y cena incluidos', code:'CAMP-DIC' },
+  };
+
+  function openPromo() {
+    document.getElementById('promoModal').classList.add('open');
+  }
+  function closePromo() {
+    document.getElementById('promoModal').classList.remove('open');
+    sessionStorage.setItem('promoClosed', '1');
+  }
+  document.getElementById('promoModal').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closePromo();
+  });
+
+  (function initPromo() {
+    const m = new Date().getMonth() + 1;
+    const y = new Date().getFullYear();
+    const p = PROMOS[m];
+    if (!p) return;
+
+    const mesNombre = MESES[m - 1];
+    const diasMes   = DIASMES[m];
+    const expiry    = `${diasMes} de ${mesNombre} de ${y}`;
+    const code      = p.code + String(y).slice(-2);
+    const waMsg     = encodeURIComponent(`Hola, quiero la promoción ${code} (${p.pct} de descuento) en Hotel El Campanario.`);
+
+    document.getElementById('promoBadge').textContent    = p.badge;
+    document.getElementById('promoTitle').textContent    = p.title;
+    document.getElementById('promoSub').textContent      = p.sub;
+    document.getElementById('promoPct').textContent      = p.pct;
+    document.getElementById('promoDesc').textContent     = p.desc;
+    document.getElementById('promoValidity').textContent = `Válido hasta el ${expiry}`;
+    document.getElementById('promoCode').textContent     = code;
+    document.getElementById('promoWaBtn').href           = `https://wa.me/50431786784?text=${waMsg}`;
+
+    document.getElementById('ribbonText').textContent = `${p.badge} — ${p.title}: ${p.pct} de descuento este mes`;
+    document.getElementById('ribbonLink').onclick = e => { e.preventDefault(); openPromo(); };
+
+    if (!sessionStorage.getItem('promoClosed')) {
+      setTimeout(openPromo, 3000);
+    }
+  })();
+</script>
+</body>
+</html>
